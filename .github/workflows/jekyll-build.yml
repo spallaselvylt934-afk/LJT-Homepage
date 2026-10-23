@@ -30,13 +30,36 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      - name: Verify publication listings
+      - name: Verify site content
         run: |
-          ruby -e '
-            about = File.read("_site/index.html")
-            publications = File.read("_site/publications/index.html")
-            titles = Dir.glob("_publications/*.md").map { |file| File.read(file)[/title: "(.*)"/, 1] }
-            abort "A publication is missing from the about page" unless titles.all? { |title| about.include?(title) }
-            abort "A publication is missing from the publications page" unless titles.all? { |title| publications.include?(title) }
-            puts "All #{titles.size} publications appear on both the about page and the publications page."
-          '
+          ruby <<'RUBY'
+          about = File.read("_site/index.html")
+          publications = File.read("_site/publications/index.html")
+          cv = File.read("_site/cv/index.html")
+
+          titles = Dir.glob("_publications/*.md").map { |file| File.read(file)[/title: "(.*)"/, 1] }
+          abort "A publication is missing from the about page" unless titles.all? { |title| about.include?(title) }
+          abort "A publication is missing from the publications page" unless titles.all? { |title| publications.include?(title) }
+          abort "A publication is missing from the CV page" unless titles.all? { |title| cv.include?(title) }
+
+          facts = [
+            "Junteng Liu",
+            "jliugi@connect.ust.hk",
+            "https://github.com/Vicent0205",
+            "tbK9jl4AAAAJ",
+            "junteng88716710",
+            "HKUST NLP Group",
+            "Professor Junxian He",
+            "Ph.D. in Computer Science",
+            "Shanghai Jiao Tong University",
+            "MINIMAX",
+            "Tencent WXG",
+            "Shanghai AI Lab",
+            "Zhiyuan Honor Scholarship"
+          ]
+          abort "Profile information is missing from the about page" unless facts.all? { |fact| about.include?(fact) }
+          abort "Template placeholder content remains on the about page" if about.include?("Your Name") || about.include?("GitHub University")
+
+          puts "All #{titles.size} publications appear on the about, publications, and CV pages."
+          puts "Profile, research experience, honors, and contact details are present on the about page."
+          RUBY
