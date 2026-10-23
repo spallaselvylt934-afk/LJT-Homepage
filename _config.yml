@@ -14,7 +14,7 @@ title_separator          : "-"
 name                     : &name "Junteng Liu"
 description              : &description "Junteng Liu's academic portfolio"
 url                      : https://spallaselvylt934-afk.github.io # The base hostname & protocol for your site
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
+baseurl                  : "/LJT-Homepage" # the subpath of your site
 repository               : "spallaselvylt934-afk/LJT-Homepage"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
@@ -121,7 +121,7 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  hide                   : true     # change to true to hide the RSS feed in the footer
+  hide                   : true     # hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
 
 
