@@ -29,3 +29,14 @@ jobs:
         run: bundle exec jekyll build --strict_front_matter
         env:
           JEKYLL_ENV: production
+
+      - name: Verify publication listings
+        run: |
+          ruby -e '
+            about = File.read("_site/index.html")
+            publications = File.read("_site/publications/index.html")
+            titles = Dir.glob("_publications/*.md").map { |file| File.read(file)[/title: "(.*)"/, 1] }
+            abort "A publication is missing from the about page" unless titles.all? { |title| about.include?(title) }
+            abort "A publication is missing from the publications page" unless titles.all? { |title| publications.include?(title) }
+            puts "All #{titles.size} publications appear on both the about page and the publications page."
+          '

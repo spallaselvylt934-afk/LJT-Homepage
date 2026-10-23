@@ -3,7 +3,8 @@ title: "C-Eval: A Multi-Level Multi-Discipline Chinese Evaluation Suite for Foun
 collection: publications
 category: conferences
 permalink: /publication/c-eval/
-date: 2023
+# Only the publication year is provided; the date is used for ordering.
+date: "2023-01-01"
 venue: 'NeurIPS 2023'
 citation: 'Yuzhen Huang, Yuzhuo Bai, Zhihao Zhu, Junlei Zhang, Jinghan Zhang, Tangjun Su, Junteng Liu, Chuancheng Lv, Yikai Zhang, Jiayi Lei, Yao Fu, Maosong Sun, Junxian He. (2023). "C-Eval: A Multi-Level Multi-Discipline Chinese Evaluation Suite for Foundation Models." NeurIPS 2023.'
 ---
