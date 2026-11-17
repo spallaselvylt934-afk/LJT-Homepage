@@ -44,5 +44,5 @@ You can also find my full publication list on my [Google Scholar profile](https:
 
 * **Email:** [jliugi@connect.ust.hk](mailto:jliugi@connect.ust.hk)
 * **GitHub:** [github.com/Vicent0205](https://github.com/Vicent0205)
-* **Google Scholar:** [scholar.google.com/tbK9jl4AAAAJ](https://scholar.google.com/citations?hl=en&user=tbK9jl4AAAAJ&view_op=list_works&sortby=pubdate)
+* **Google Scholar:** [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=tbK9jl4AAAAJ&view_op=list_works&sortby=pubdate)
 * **X (Twitter):** [@junteng88716710](https://twitter.com/junteng88716710)
